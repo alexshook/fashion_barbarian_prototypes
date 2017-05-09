@@ -2,7 +2,8 @@
   (:require [io.pedestal.http :as http]
             [io.pedestal.http.route :as route]
             [io.pedestal.http.body-params :as body-params]
-            [ring.util.response :as ring-resp]))
+            [ring.util.response :as ring-resp]
+            [clj-http.client :as client]))
 
 (defn about-page
   [request]
@@ -10,9 +11,20 @@
                               (clojure-version)
                               (route/url-for ::about-page))))
 
+(def trendy-keywords
+  [ "ruffle", "off the shoulder", "floral", "90s", "safari chic"])
+
+(def trendy-keyword
+  (rand-nth trendy-keywords))
+
+(def shopstyle-request
+  (client/get "http://api.shopstyle.com/api/v2/products"
+    {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
+                      :fts trendy-keyword}}))
+
 (defn home-page
   [request]
-  (ring-resp/response "Hello World!"))
+  (http/json-response shopstyle-request))
 
 ;; Defines "/" and "/about" routes with their associated :get handlers.
 ;; The interceptors defined after the verb map (e.g., {:get home-page}
