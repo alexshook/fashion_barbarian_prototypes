@@ -14,17 +14,22 @@
 (def trendy-keywords
   [ "ruffle", "off the shoulder", "floral", "90s", "safari chic"])
 
-(def trendy-keyword
+(defn trendy-keyword
+  [trendy-keywords]
   (rand-nth trendy-keywords))
 
-(def shopstyle-request
+(defn shopstyle-request
+  [trendy-keyword]
   (client/get "http://api.shopstyle.com/api/v2/products"
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
-                      :fts trendy-keyword}}))
+                      :fts (trendy-keyword trendy-keywords),
+                      :offset 0,
+                      :limit 5,
+                      :fl ["p7" "p8"]}}))
 
 (defn home-page
   [request]
-  (http/json-response shopstyle-request))
+  (http/json-response (shopstyle-request trendy-keyword)))
 
 ;; Defines "/" and "/about" routes with their associated :get handlers.
 ;; The interceptors defined after the verb map (e.g., {:get home-page}
