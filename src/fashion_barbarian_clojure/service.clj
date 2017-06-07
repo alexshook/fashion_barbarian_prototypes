@@ -60,9 +60,9 @@
               ;; string(s) specifying scheme, host and port for
               ;; allowed source(s):
               ;;
-              ;; "http://localhost:8080"
+              ; "http://localhost:8080"
               ;;
-              ;;::http/allowed-origins ["scheme://host:port"]
+              ::http/allowed-origins ["http://alexshook.com/fashion_barbarian_front_end/"]
 
               ;; Root for resource interceptor that is available by default.
               ::http/resource-path "/public"
@@ -70,7 +70,7 @@
               ;; Either :jetty, :immutant or :tomcat (see comments in project.clj)
               ::http/type :jetty
               ;;::http/host "localhost"
-              ::http/port (Integer/parseInt (get (System/getenv) "PORT" "5000"))
+              ::http/port (Integer/parseInt (get (System/getenv) "PORT" "8080"))
               ;; Options to pass to the container (Jetty)
               ::http/container-options {:h2c? true
                                         :h2? false
