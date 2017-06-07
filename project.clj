@@ -1,6 +1,6 @@
 (defproject fashion-barbarian-clojure "0.0.1-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+  :description "Shows you five random products from a current trend."
+  :url "https://calm-beach-60805.herokuapp.com/"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
