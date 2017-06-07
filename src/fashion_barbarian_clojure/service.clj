@@ -3,7 +3,9 @@
             [io.pedestal.http.route :as route]
             [io.pedestal.http.body-params :as body-params]
             [ring.util.response :as ring-resp]
-            [clj-http.client :as client]))
+            [clj-http.client :as client]
+            [clojure.data.json :as json]
+            [clojure.walk :as walk]))
 
 (defn about-page
   [request]
@@ -27,30 +29,22 @@
                       :limit 5,
                       :fl ["p7" "p8"]}}))
 
+(defn trendy-products
+  [shopstyle-request]
+    (let [response (json/read-str (get-in shopstyle-request [:body]))]
+      (let [products (walk/keywordize-keys (get-in response ["products"]))]
+        (map (fn [product]
+          (select-keys product [:brandedName :clickUrl :price :salePrice :image])) products))))
+
 (defn home-page
   [request]
-  (http/json-response (shopstyle-request trendy-keyword)))
+  (http/json-response
+    {:products (trendy-products (shopstyle-request trendy-keyword))}))
 
-;; Defines "/" and "/about" routes with their associated :get handlers.
-;; The interceptors defined after the verb map (e.g., {:get home-page}
-;; apply to / and its children (/about).
 (def common-interceptors [(body-params/body-params) http/html-body])
 
-;; Tabular routes
 (def routes #{["/" :get (conj common-interceptors `home-page)]
               ["/about" :get (conj common-interceptors `about-page)]})
-
-;; Map-based routes
-;(def routes `{"/" {:interceptors [(body-params/body-params) http/html-body]
-;                   :get home-page
-;                   "/about" {:get about-page}}})
-
-;; Terse/Vector-based routes
-;(def routes
-;  `[[["/" {:get home-page}
-;      ^:interceptors [(body-params/body-params) http/html-body]
-;      ["/about" {:get about-page}]]]])
-
 
 ;; Consumed by fashion-barbarian-clojure.server/create-server
 ;; See http/default-interceptors for additional options you can configure
