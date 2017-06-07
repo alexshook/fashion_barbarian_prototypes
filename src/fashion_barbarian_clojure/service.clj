@@ -26,7 +26,7 @@
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
                       :fts (trendy-keyword trendy-keywords),
                       :offset 0,
-                      :limit 5,
+                      :limit 25,
                       :fl ["p7" "p8"]}}))
 
 (defn trendy-products
