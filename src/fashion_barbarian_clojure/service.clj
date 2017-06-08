@@ -62,7 +62,7 @@
               ;;
               ; "http://localhost:8080"
               ;;
-              ::http/allowed-origins ["http://alexshook.com/fashion_barbarian_front_end/"]
+              ::http/allowed-origins ["http://alexshook.com" "https://alexshook.github.io"]
 
               ;; Root for resource interceptor that is available by default.
               ::http/resource-path "/public"
