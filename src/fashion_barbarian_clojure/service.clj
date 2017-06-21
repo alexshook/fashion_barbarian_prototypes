@@ -14,7 +14,7 @@
                               (route/url-for ::about-page))))
 
 (def trendy-keywords
-  [ "ruffle", "off the shoulder", "floral", "90s", "safari chic"])
+  ["ruffle", "off the shoulder", "floral", "90s", "safari chic"])
 
 (defn trendy-keyword
   [trendy-keywords]
