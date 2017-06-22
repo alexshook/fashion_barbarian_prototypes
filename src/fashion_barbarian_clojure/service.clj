@@ -14,7 +14,7 @@
                               (route/url-for ::about-page))))
 
 (def trendy-keywords
-  [ "ruffle", "off the shoulder", "floral", "90s", "safari chic"])
+  ["ruffle", "off the shoulder", "floral", "90s", "embroidery"])
 
 (defn trendy-keyword
   [trendy-keywords]
@@ -25,8 +25,9 @@
   (client/get "http://api.shopstyle.com/api/v2/products"
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
                       :fts (trendy-keyword trendy-keywords),
-                      :offset 0,
-                      :limit 25,
+                      :cat "womens-clothes"
+                      :offset (rand-int 50),
+                      :limit 30,
                       :fl ["p7" "p8"]}}))
 
 (defn trendy-products
