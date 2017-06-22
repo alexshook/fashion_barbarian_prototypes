@@ -41,7 +41,7 @@
     (let [response (json/read-str (get-in shopstyle-request [:body]))]
       (let [products (walk/keywordize-keys (get-in response ["products"]))]
         (map (fn [product]
-          (select-keys product [:brandedName :clickUrl :price :salePrice :image])) products))))
+          (select-keys product [:brandedName :clickUrl :priceLabel :salePriceLabel :image])) products))))
 
 (defn index
   [request]
