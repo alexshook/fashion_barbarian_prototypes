@@ -13,8 +13,20 @@
                               (clojure-version)
                               (route/url-for ::about-page))))
 
+(def shopstyle-base-url
+  "http://api.shopstyle.com/api/v2/products")
+
 (def trendy-keywords
   ["ruffle", "off the shoulder", "floral", "90s", "embroidery"])
+
+(def category
+  "womens-clothes")
+
+(def products-limit
+  30)
+
+(def price-categories
+  ["p7" "p8"])
 
 (defn trendy-keyword
   [trendy-keywords]
@@ -22,13 +34,13 @@
 
 (defn shopstyle-request
   [trendy-keyword]
-  (client/get "http://api.shopstyle.com/api/v2/products"
+  (client/get shopstyle-base-url
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
                       :fts (trendy-keyword trendy-keywords),
-                      :cat "womens-clothes"
+                      :cat category,
                       :offset (rand-int 50),
-                      :limit 30,
-                      :fl ["p7" "p8"]}}))
+                      :limit products-limit,
+                      :fl price-categories}}))
 
 (defn trendy-products
   [shopstyle-request]
