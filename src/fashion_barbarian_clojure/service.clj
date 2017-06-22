@@ -43,14 +43,14 @@
         (map (fn [product]
           (select-keys product [:brandedName :clickUrl :price :salePrice :image])) products))))
 
-(defn home-page
+(defn index
   [request]
   (http/json-response
     {:products (trendy-products (shopstyle-request trendy-keyword))}))
 
 (def common-interceptors [(body-params/body-params) http/html-body])
 
-(def routes #{["/" :get (conj common-interceptors `home-page)]})
+(def routes #{["/" :get (conj common-interceptors `index)]})
 
 ;; Consumed by fashion-barbarian-clojure.server/create-server
 ;; See http/default-interceptors for additional options you can configure
