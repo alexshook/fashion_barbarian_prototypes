@@ -7,12 +7,6 @@
             [clojure.data.json :as json]
             [clojure.walk :as walk]))
 
-(defn about-page
-  [request]
-  (ring-resp/response (format "Clojure %s - served from %s"
-                              (clojure-version)
-                              (route/url-for ::about-page))))
-
 (def shopstyle-base-url
   "http://api.shopstyle.com/api/v2/products")
 
@@ -56,8 +50,7 @@
 
 (def common-interceptors [(body-params/body-params) http/html-body])
 
-(def routes #{["/" :get (conj common-interceptors `home-page)]
-              ["/about" :get (conj common-interceptors `about-page)]})
+(def routes #{["/" :get (conj common-interceptors `home-page)]})
 
 ;; Consumed by fashion-barbarian-clojure.server/create-server
 ;; See http/default-interceptors for additional options you can configure
