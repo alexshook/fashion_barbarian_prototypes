@@ -25,7 +25,7 @@
   (client/get "http://api.shopstyle.com/api/v2/products"
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
                       :fts (trendy-keyword trendy-keywords),
-                      :offset 0,
+                      :offset (rand-int 100),
                       :limit 25,
                       :fl ["p7" "p8"]}}))
 
