@@ -14,7 +14,8 @@
                  [org.slf4j/jcl-over-slf4j "1.7.22"]
                  [org.slf4j/log4j-over-slf4j "1.7.22"]
 
-                 [clj-http "3.5.0"]]
+                 [clj-http "3.5.0"]
+                 [com.jakemccrary/lein-test-refresh "0.20.0"]]
   :min-lein-version "2.0.0"
   :resource-paths ["config", "resources"]
   :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "fashion-barbarian-clojure.server/run-dev"]}

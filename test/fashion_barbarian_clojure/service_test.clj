@@ -7,9 +7,9 @@
 (def service
   (::bootstrap/service-fn (bootstrap/create-servlet service/service)))
 
-(deftest home-page-test
+(deftest index-test
   (is (=
-       (:body (response-for service :get "/"))
+       (:products (response-for service :get "/"))
        "Hello World!"))
   (is (=
        (:headers (response-for service :get "/"))

@@ -11,13 +11,13 @@
   "http://api.shopstyle.com/api/v2/products")
 
 (def trendy-keywords
-  ["ruffle", "off the shoulder", "floral", "90s", "embroidery"])
+  ["plaid blazer", "faux fur", "neon sweater", "holographic", "trench coat"])
 
 (def category
   "womens-clothes")
 
 (def products-limit
-  30)
+  50)
 
 (def price-categories
   ["p7" "p8"])
@@ -32,7 +32,7 @@
     {:query-params {  :pid (System/getenv "SHOPSTYLE_API_KEY"),
                       :fts (trendy-keyword trendy-keywords),
                       :cat category,
-                      :offset (rand-int 50),
+                      :offset (rand-int 30),
                       :limit products-limit,
                       :fl price-categories}}))
 
@@ -68,7 +68,7 @@
               ;;
               ; "http://localhost:8080"
               ;;
-              ::http/allowed-origins ["http://alexshook.com" "https://alexshook.github.io"]
+              ::http/allowed-origins ["http://alexshook.com" "https://alexshook.github.io" "null"]
 
               ;; Root for resource interceptor that is available by default.
               ::http/resource-path "/public"
