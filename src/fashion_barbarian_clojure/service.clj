@@ -11,7 +11,7 @@
   "http://api.shopstyle.com/api/v2/products")
 
 (def trendy-keywords
-  ["plaid blazer", "faux fur", "neon sweater", "holographic", "trench coat"])
+  ["swimsuit", "polka dot blouse", "polka dot dress", "ruched dress", "macrame dress"])
 
 (def category
   "womens-clothes")
