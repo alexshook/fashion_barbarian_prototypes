@@ -11,7 +11,7 @@
   "http://api.shopstyle.com/api/v2/products")
 
 (def trendy-keywords
-  ["swimsuit", "polka dot blouse", "polka dot dress", "ruched dress", "macrame dress"])
+  ["crochet dress", "neon yellow", "polka dot blouse", "leather skirt", "mini bag"])
 
 (def category
   "womens-clothes")
