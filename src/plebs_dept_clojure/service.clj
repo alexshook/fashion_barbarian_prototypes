@@ -68,7 +68,7 @@
               ;;
               ; "http://localhost:8080"
               ;;
-              ::http/allowed-origins ["http://alexshook.com" "https://alexshook.github.io" "null"]
+              ::http/allowed-origins ["http://alexshook.com" "https://alexshook.com" "https://alexshook.github.io" "null"]
 
               ;; Root for resource interceptor that is available by default.
               ::http/resource-path "/public"
