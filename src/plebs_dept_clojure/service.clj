@@ -11,7 +11,7 @@
   "http://api.shopstyle.com/api/v2/products")
 
 (def trendy-keywords
-  ["crochet dress", "neon yellow", "polka dot blouse", "leather skirt", "mini bag"])
+  ["hot pink dress", "trench coat", "over the knee boots", "leather skirt", "top handle bag"])
 
 (def category
   "womens-clothes")
