@@ -11,7 +11,7 @@
   "http://api.shopstyle.com/api/v2/products")
 
 (def trendy-keywords
-  ["hot pink dress", "trench coat", "over the knee boots", "leather skirt", "top handle bag"])
+  ["hot pink dress", "trench coat", "bootcut jeans", "leather skirt", "bomber jacket"])
 
 (def category
   "womens-clothes")
