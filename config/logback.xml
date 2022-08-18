@@ -13,7 +13,7 @@
 
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
       <!-- rollover daily -->
-      <fileNamePattern>logs/fashion-barbarian-clojure-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <fileNamePattern>logs/plebs-dept-clojure-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
       <!-- or whenever the file size reaches 64 MB -->
       <maxFileSize>64 MB</maxFileSize>
     </rollingPolicy>

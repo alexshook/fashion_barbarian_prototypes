@@ -1,4 +1,4 @@
-(defproject fashion-barbarian-clojure "0.0.1-SNAPSHOT"
+(defproject plebs-dept-clojure "0.0.1-SNAPSHOT"
   :description "Shows you five random products from a current trend."
   :url "https://calm-beach-60805.herokuapp.com/"
   :license {:name "Eclipse Public License"
@@ -18,8 +18,8 @@
                  [com.jakemccrary/lein-test-refresh "0.20.0"]]
   :min-lein-version "2.0.0"
   :resource-paths ["config", "resources"]
-  :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "fashion-barbarian-clojure.server/run-dev"]}
+  :profiles {:dev {:aliases {"run-dev" ["trampoline" "run" "-m" "Plebs Dept.-clojure.server/run-dev"]}
                    :dependencies [[io.pedestal/pedestal.service-tools "0.5.2"]]}
-             :uberjar {:aot [fashion-barbarian-clojure.server]}}
-  :main ^{:skip-aot true} fashion-barbarian-clojure.server)
+             :uberjar {:aot [plebs-dept-clojure.server]}}
+  :main ^{:skip-aot true} plebs-dept-clojure.server)
 

@@ -9,8 +9,8 @@ base: cloudius/osv-openjdk8
 #
 # The command line passed to OSv to start up the application.
 #
-#cmdline: /java.so -cp /fashion-barbarian-clojure/app.jar clojure.main -m fashion-barbarian-clojure
-cmdline: /java.so -jar /fashion-barbarian-clojure/app.jar
+#cmdline: /java.so -cp /plebs-dept-clojure/app.jar clojure.main -m plebs-dept-clojure
+cmdline: /java.so -jar /plebs-dept-clojure/app.jar
 
 #
 # The command to use to build the application.
@@ -25,5 +25,5 @@ cmdline: /java.so -jar /fashion-barbarian-clojure/app.jar
 # List of files that are included in the generated image.
 #
 files:
-  /fashion-barbarian-clojure/app.jar: ./target/fashion-barbarian-clojure-0.0.1-SNAPSHOT-standalone.jar
+  /plebs-dept-clojure/app.jar: ./target/plebs-dept-clojure-0.0.1-SNAPSHOT-standalone.jar
 

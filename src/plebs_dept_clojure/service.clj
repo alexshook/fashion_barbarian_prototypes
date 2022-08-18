@@ -1,4 +1,4 @@
-(ns fashion-barbarian-clojure.service
+(ns plebs-dept-clojure.service
   (:require [io.pedestal.http :as http]
             [io.pedestal.http.route :as route]
             [io.pedestal.http.body-params :as body-params]
@@ -52,7 +52,7 @@
 
 (def routes #{["/" :get (conj common-interceptors `index)]})
 
-;; Consumed by fashion-barbarian-clojure.server/create-server
+;; Consumed by plebs-dept-clojure.server/create-server
 ;; See http/default-interceptors for additional options you can configure
 (def service {:env :prod
               ;; You can bring your own non-default interceptors. Make

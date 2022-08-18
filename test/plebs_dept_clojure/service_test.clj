@@ -1,8 +1,8 @@
-(ns fashion-barbarian-clojure.service-test
+(ns plebs-dept-clojure.service-test
   (:require [clojure.test :refer :all]
             [io.pedestal.test :refer :all]
             [io.pedestal.http :as bootstrap]
-            [fashion-barbarian-clojure.service :as service]))
+            [plebs-dept-clojure.service :as service]))
 
 (def service
   (::bootstrap/service-fn (bootstrap/create-servlet service/service)))

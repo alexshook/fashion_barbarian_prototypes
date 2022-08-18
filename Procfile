@@ -1,1 +1,1 @@
-web: lein run -m fashion-barbarian-clojure.server $PORT
+web: lein run -m plebs-dept-clojure.server $PORT
